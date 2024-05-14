@@ -69,10 +69,6 @@
   margin-inline: auto; /*  inline mean = left & rhigt */
 }
 
-:where(.flow :not(:first-child)) {
-  margin-top: var(--flow-spacer, 3em) !important;
-}
-
 .even-columns {
   display: grid;
   gap: 1rem;
@@ -82,6 +78,33 @@
     grid-auto-flow: column;
     grid-auto-columns: 1fr;
   }
+}
+.vertical-align-center {
+  align-items: center;
+}
+.justify-self-end {
+  justify-self: end;
+}
+:where(.flow :not(:first-child)) {
+  margin-top: var(--flow-spacer, 3em) !important;
+}
+
+/* cta */
+.cta {
+  position: relative;
+  isolation: isolate;
+  text-align: center;
+}
+.cta::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image: url("images/bg-tablet-pattern.svg"),
+    url("images/bg-tablet-pattern.svg");
+  background-position: -15rem 5rem, 80rem -42rem;
+  background-repeat: no-repeat;
+  opacity: 0.1;
 }
 
 /* utlity classes */
